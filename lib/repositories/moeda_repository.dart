@@ -7,35 +7,35 @@ class MoedaRepository {
 
     Moeda(
       icone: 'images/bitcoin.png', 
-      nome: 'Bitcoin', 
+      nome:  'Bitcoin', 
       sigla: 'BTC', 
       preco: 1509.00
       ),
 
         Moeda(
       icone: 'images/bitcoin.png',
-      nome: 'Bitcoin', 
+      nome:  'Bitcoin', 
       sigla: 'BTC', 
       preco: 1509.00
       ),
 
     Moeda(
       icone: 'images/bitcoin.png', 
-      nome: 'Bitcoin', 
+      nome:  'Bitcoin', 
       sigla: 'BTC', 
       preco: 1509.00
       ),
 
    Moeda(
       icone: 'images/bitcoin.png',
-      nome: 'Bitcoin', 
+      nome:  'Bitcoin', 
       sigla: 'BTC', 
       preco: 1509.00
       ),
 
    Moeda(
       icone: 'images/bitcoin.png', 
-      nome: 'Bitcoin', 
+      nome:  'Bitcoin', 
       sigla: 'BTC', 
       preco: 1509.00
       ),
