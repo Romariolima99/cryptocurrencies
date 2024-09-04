@@ -1,10 +1,11 @@
 import 'package:cripto/models/moedas.dart';
+import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/moeda_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MoedasPage extends StatefulWidget {
-  MoedasPage({super.key});
+  const MoedasPage({super.key});
 
   @override
   State<MoedasPage> createState() => _MoedasPageState();
@@ -38,6 +39,13 @@ class _MoedasPageState extends State<MoedasPage> {
         iconTheme: const IconThemeData(color: Colors.black87),
       );
     }
+  }
+
+  mostrarDetalhes(Moeda moeda){
+    Navigator.push(context, MaterialPageRoute(
+      builder:(_) => MoedasDetalhesPage(moeda: moeda),
+      ),
+      );
   }
 
   @override
@@ -75,6 +83,7 @@ class _MoedasPageState extends State<MoedasPage> {
                     : selecionadas.add(tabela[moeda]);
               });
             },
+            onTap: () => mostrarDetalhes (tabela[moeda]),
           );
         },
         padding: const EdgeInsets.all(16),

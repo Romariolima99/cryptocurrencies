@@ -13,10 +13,10 @@ class MoedaRepository {
       ),
 
         Moeda(
-      icone: 'images/bitcoin.png',
-      nome:  'Bitcoin', 
-      sigla: 'BTC', 
-      preco: 1509.00
+      icone: 'images/ethereum-eth-logo.png',
+      nome:  'Ethereum', 
+      sigla: 'ETH', 
+      preco: 1109.00
       ),
 
     Moeda(
