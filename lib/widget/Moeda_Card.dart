@@ -1,6 +1,7 @@
 import 'package:cripto/models/moedas.dart';
 import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
+import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -96,8 +97,8 @@ class _MoedaCardState extends State<MoedaCard> {
                       title: const Text('Remover das favoritas'),
                       onTap: () {
                         Navigator.pop(context);
-                        Provider.of<FavoritasPage>(context, listen: false);
-                        // .remove(widget.moeda);
+                        Provider.of<FavoritasRepository>(context, listen: false)
+                        .remove(widget.moeda);
                       },
                     ),
                   ),
