@@ -1,0 +1,44 @@
+
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class AppSetings extends ChangeNotifier{
+  late SharedPreferences _prefs;
+  Map<String, String> locale = {
+    'locate': 'pt_BR',
+    'name': 'R\$'
+  };
+
+  AppSetings(){
+  _startSettings();
+
+  }
+
+  _startSettings() async {
+    await _startPreferences();
+    await _readLocale();
+  }
+
+Future<void> _startPreferences() async {
+  _prefs = await SharedPreferences.getInstance();
+
+}
+_readLocale(){
+  final local  = _prefs.getString('local') ?? 'pt_br';
+   final name  = _prefs.getString('name') ?? 'R\$';
+   locale = {
+    'locale': local,
+    'name': name,
+   };
+
+   notifyListeners();
+
+}
+setLocale(String local, String name) async {
+
+  await _prefs.setString('local', local);
+   await _prefs.setString('name', name);
+   await _readLocale();
+}
+
+}
