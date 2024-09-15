@@ -1,3 +1,4 @@
+import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/moedas.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
@@ -15,14 +16,42 @@ class MoedasPage extends StatefulWidget {
 
 class _MoedasPageState extends State<MoedasPage> {
   final tabela = MoedaRepository.tabela;
-  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  late NumberFormat real;
+  late Map<String , String> loc;
   List<Moeda> selecionadas = [];
   late FavoritasRepository favoritas;
+
+  readNumberFormat(){
+    loc = context.watch<AppSetings>().locale;
+    real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
+  }
+
+  chageLanguageButton(){
+    final locale = loc['locale'] == 'pt_BR' ? 'en_US' : 'pt_BR';
+    final name = loc['locale'] == 'pt_BR' ? '\$' : 'R\$';
+
+    return PopupMenuButton(icon: const Icon(Icons.language),
+    itemBuilder: (context) => [
+      PopupMenuItem(child: ListTile(
+      leading: Icon(Icons.swap_vert),
+      title: Text('Usar $locale'),
+      onTap: (){
+        context.read<AppSetings>().setLocale(locale, name);
+        Navigator.pop(context);
+      },
+     ),
+     ),
+     ],
+    );
+  }
 
   appApbarDinamica() {
     if (selecionadas.isEmpty) {
       return AppBar(
         title: const Text('Cripto Moedas'),
+        actions: [
+          chageLanguageButton()
+        ],
         centerTitle: true, // Centraliza o título
         backgroundColor: Colors.blue, // Define a cor azul para a AppBar
       );
@@ -60,6 +89,7 @@ class _MoedasPageState extends State<MoedasPage> {
   @override
   Widget build(BuildContext context) {
     favoritas = Provider.of<FavoritasRepository>(context);
+    readNumberFormat();
     return Scaffold(
       appBar: appApbarDinamica(),
       body: ListView.separated(
