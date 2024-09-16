@@ -1,5 +1,5 @@
 import 'package:cripto/models/moedas.dart';
-import 'package:cripto/pages/favoritas_page.dart';
+// import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:flutter/material.dart';

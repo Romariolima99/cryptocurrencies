@@ -1,6 +1,2 @@
-2024/09/15-16:35:43.241 3b32 Reusing MANIFEST /tmp/flutter_tools.GHJTZD/flutter_tools_chrome_device.FJKWTY/Default/shared_proto_db/MANIFEST-000001
-2024/09/15-16:35:43.241 3b32 Recovering log #3
-2024/09/15-16:35:43.242 3b32 Reusing old log /tmp/flutter_tools.GHJTZD/flutter_tools_chrome_device.FJKWTY/Default/shared_proto_db/000003.log 
-2024/09/15-16:35:55.928 3b32 Level-0 table #5: started
-2024/09/15-16:35:55.930 3b32 Level-0 table #5: 128699 bytes OK
-2024/09/15-16:35:55.932 3b32 Delete type=0 #3
+2024/09/15-23:20:57.869 bf9f Creating DB /tmp/flutter_tools.HKVPRP/flutter_tools_chrome_device.BFUPFC/Default/shared_proto_db since it was missing.
+2024/09/15-23:20:57.875 bf9f Reusing MANIFEST /tmp/flutter_tools.HKVPRP/flutter_tools_chrome_device.BFUPFC/Default/shared_proto_db/MANIFEST-000001
