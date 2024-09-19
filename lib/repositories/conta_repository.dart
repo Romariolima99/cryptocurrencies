@@ -5,8 +5,8 @@ import 'package:sqflite/sqlite_api.dart';
 
 class ContaRepository extends ChangeNotifier {
   late Database db;
-  List<Posicao> _carteira = [];
-  double _saldo = 0;
+  final List<Posicao> _carteira = [];
+  double _saldo = 6;
 
   get saldo => _saldo;
 
