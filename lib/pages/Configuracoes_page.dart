@@ -16,7 +16,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
   @override
   Widget build(BuildContext context) {
     final conta = context.watch<ContaRepository>();
-    final loc = context.read<AppSetings>().locale;
+    final loc = context.read<AppSettings>().locale;
     NumberFormat real =
         NumberFormat.currency(locale: loc['locale'], name: loc['name']);
 
@@ -52,8 +52,9 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
   void updateSaldo() async {
     final form = GlobalKey<FormState>();
     final valor = TextEditingController();
-    final conta = context.read<ContaRepository>();
 
+    // Obtendo a conta do Provider
+    final conta = context.read<ContaRepository>();
     valor.text = conta.saldo.toString();
 
     AlertDialog dialog = AlertDialog(
@@ -68,6 +69,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
           ],
           validator: (value) {
             if (value!.isEmpty) return 'Informe o valor do saldo';
+            if (double.tryParse(value) == null) return 'Valor inválido';
             return null;
           },
         ),

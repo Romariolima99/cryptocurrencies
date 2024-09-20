@@ -27,7 +27,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
   @override
   Widget build(BuildContext context) {
     conta = context.watch<ContaRepository>();
-    final loc = context.read<AppSetings>().locale;
+    final loc = context.read<AppSettings>().locale;
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
     saldo = conta.saldo;
 

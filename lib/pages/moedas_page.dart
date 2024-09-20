@@ -22,7 +22,7 @@ class _MoedasPageState extends State<MoedasPage> {
   late FavoritasRepository favoritas;
 
   readNumberFormat(){
-    loc = context.watch<AppSetings>().locale;
+    loc = context.watch<AppSettings>().locale;
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
   }
 
@@ -36,7 +36,7 @@ class _MoedasPageState extends State<MoedasPage> {
       leading: Icon(Icons.swap_vert),
       title: Text('Usar $locale'),
       onTap: (){
-        context.read<AppSetings>().setLocale(locale, name);
+        context.read<AppSettings>().setLocale(locale, name);
         Navigator.pop(context);
       },
      ),

@@ -1,37 +1,37 @@
-import 'package:cripto/database/db.dart';
-import 'package:cripto/models/posicao.dart';
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqlite_api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cripto/models/posicao.dart';
 
 class ContaRepository extends ChangeNotifier {
-  late Database db;
-  final List<Posicao> _carteira = [];
-  double _saldo = 6;
+  final List<Posicao> _carteira = []; // Inicialização da carteira
+  double _saldo = 90;
 
-  get saldo => _saldo;
-
-  List<Posicao> get carteira => _carteira;
+  double get saldo => _saldo;
+  List<Posicao> get carteira => _carteira; // Getter para carteira
 
   ContaRepository() {
     _initRepository();
   }
 
-  _initRepository() async {
+  Future<void> _initRepository() async {
     await _getSaldo();
+    await _loadCarteira(); // Carregar a carteira, se necessário
   }
 
-  _getSaldo() async {
-    db = await DB.instance.database;
-    List conta = await db.query('conta', limit: 1);
-    _saldo = conta.first['saldo'];
+  Future<void> _getSaldo() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _saldo = prefs.getDouble('saldo') ?? 90; // Valor padrão se não houver
     notifyListeners();
   }
 
-  setSaldo(double valor) async {
-    db = await DB.instance.database;
-    db.update('conta',{
-      'saldo': valor,
-      });
+  Future<void> _loadCarteira() async {
+    // Aqui você pode carregar a carteira de um arquivo ou outra fonte, se necessário
+    // Por exemplo, pode usar SharedPreferences para armazenar a carteira como uma lista de strings ou JSON
+  }
+
+  Future<void> setSaldo(double valor) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble('saldo', valor);
     _saldo = valor;
     notifyListeners();
   }

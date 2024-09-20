@@ -236,10 +236,10 @@ packages:
     dependency: "direct main"
     description:
       name: provider
-      sha256: "59471e0a4595e264625d3496af567ac85bdae1148ec985aff1e0555786f53ecf"
+      sha256: c8a055ee5ce3fd98d6fc872478b03823ffdb448699c6ebdbbc71d59b596fd48c
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "6.1.2"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -309,22 +309,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  sqflite:
-    dependency: "direct main"
-    description:
-      name: sqflite
-      sha256: a43e5a27235518c03ca238e7b4732cf35eabe863a369ceba6cbefa537a66f16d
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.3+1"
-  sqflite_common:
-    dependency: transitive
-    description:
-      name: sqflite_common
-      sha256: "7b41b6c3507854a159e24ae90a8e3e9cc01eb26a477c118d6dca065b5f55453e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.5.4+2"
   stack_trace:
     dependency: transitive
     description:
@@ -349,14 +333,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  synchronized:
-    dependency: transitive
-    description:
-      name: synchronized
-      sha256: "51b08572b9f091f8c3eb4d9d4be253f196ff0075d5ec9b10a884026d5b55d7bc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.3.0+2"
   term_glyph:
     dependency: transitive
     description:

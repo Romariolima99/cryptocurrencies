@@ -17,6 +17,6 @@ class FavoritasRepository extends ChangeNotifier {
 
   remove(Moeda moeda){
     _lista.remove(moeda);
-    notifyListeners();
+     notifyListeners();
   }
 }

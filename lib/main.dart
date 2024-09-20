@@ -10,10 +10,10 @@ void main() {
     MultiProvider(
       providers: [
          ChangeNotifierProvider(create: (context) => ContaRepository()),
-         ChangeNotifierProvider(create: (context) => AppSetings()),
+         ChangeNotifierProvider(create: (context) => AppSettings()),
          ChangeNotifierProvider(create: (context) => FavoritasRepository()),
      ],
-     child: const MeuAplicativo(),
+     child: MeuAplicativo(),
     ),
   );
 }

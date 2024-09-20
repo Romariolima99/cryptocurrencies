@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
+// ignore: must_be_immutable
 class MoedasDetalhesPage extends StatefulWidget {
   Moeda moeda;
 
   MoedasDetalhesPage({
-    Key? key,
+    super.key,
     required this.moeda,
-  }) : super(key: key);
+  });
 
   @override
   State<MoedasDetalhesPage> createState() => _MoedasDetalhesPageState();
