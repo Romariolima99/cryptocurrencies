@@ -1,7 +1,9 @@
 import 'package:cripto/models/moedas.dart';
+import 'package:cripto/repositories/conta_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class MoedasDetalhesPage extends StatefulWidget {
@@ -21,10 +23,12 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final _form = GlobalKey<FormState>();
   final _valor = TextEditingController();
   double quantidade = 0;
+  late ContaRepository conta;
 
-  comprar(){
+  comprar() async{
     if(_form.currentState!.validate()){
     // salvar compra
+    await conta.comprar(widget.moeda, double.parse(_valor.text));
 
     Navigator.pop(context);
 
@@ -37,6 +41,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
 
   @override
   Widget build(BuildContext context) {
+  conta = Provider.of<ContaRepository>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.moeda.nome),
@@ -72,8 +77,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                 ? SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 24),
-                      padding: EdgeInsets.all(12),
+                      margin: const EdgeInsets.only(bottom: 24),
+                      padding: const EdgeInsets.all(12),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         color: Colors.teal.withOpacity(0.05),
@@ -110,6 +115,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                     return 'informe o valor da compra';
                   } else if (double.parse(value) < 50) {
                     return 'compra minima é 50,00 R\$';
+                  }else if (double.parse(value) > conta.saldo){
+                    return 'você não tem saldo suficiente';
                   }
                 },
                 onChanged: (value) {
@@ -123,7 +130,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
             ),
             Container(
               alignment: Alignment.bottomCenter,
-              margin: EdgeInsets.only(top: 24),
+              margin: const EdgeInsets.only(top: 24),
               child: ElevatedButton(
                 onPressed: comprar,
                 style: ElevatedButton.styleFrom(
