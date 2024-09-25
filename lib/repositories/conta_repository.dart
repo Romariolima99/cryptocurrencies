@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cripto/models/historico.dart';
 import 'package:cripto/models/moedas.dart';
 import 'package:cripto/repositories/moeda_repository.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +8,13 @@ import 'package:cripto/models/posicao.dart';
 
 class ContaRepository extends ChangeNotifier {
   List<Posicao> _carteira = []; // Inicialização da carteira
+  List<Historico> _historico = [];
+
   double _saldo = 0;
 
   double get saldo => _saldo;
-  List<Posicao> get carteira => _carteira; // Getter para carteira
+  List<Posicao> get carteira => _carteira; // Getter para carteira loadHistorico
+  List<Historico> get historico => _historico; 
 
   ContaRepository() {
     _initRepository();
@@ -19,6 +23,7 @@ class ContaRepository extends ChangeNotifier {
   Future<void> _initRepository() async {
     await _getSaldo();
     await _getCarteira();
+    await _getHistorico();
   }
 
   Future<void> _getSaldo() async {
@@ -109,5 +114,77 @@ class ContaRepository extends ChangeNotifier {
       }
     }
     notifyListeners();
+  }
+
+  //   _getHistorico() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   _historico = [];
+
+  //   String? operacoes = prefs.getString('historico');
+  //   if (operacoes != null) {
+  //     List<dynamic> operacao = jsonDecode(operacoes);
+  //     for (var posicao in operacao) {
+  //       Moeda moeda = MoedaRepository.tabela.firstWhere((m) => m.sigla == posicao['sigla']);
+  //       _historico.add(Historico(dataOperacao: DateTime.fromMicrosecondsSinceEpoch(operacao['data_operacao']), tipoOperacao: tipoOperacao, moeda: moeda, valor: valor, quantidade: quantidade));
+  //     }
+  //   }
+  //   notifyListeners();
+  // }
+
+ Future<void> _getHistorico() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _historico = []; // Limpa o histórico para garantir que não se duplique.
+
+    // Obtém o histórico armazenado no SharedPreferences
+    String? historicoStr = prefs.getString('historico');
+    if (historicoStr != null) {
+      List<dynamic> operacoes = jsonDecode(historicoStr);
+
+      for (var operacao in operacoes) {
+        // Busca a moeda pelo sigla
+        Moeda moeda = MoedaRepository.tabela.firstWhere(
+          (m) => m.sigla == operacao['sigla'],
+        );
+
+        // Adiciona a operação no histórico
+        _historico.add(
+          Historico(
+            dataOperacao: DateTime.fromMillisecondsSinceEpoch(operacao['data_operacao']),
+            tipoOperacao: operacao['tipo_operacao'],
+            moeda: moeda,
+            valor: operacao['valor'],
+            quantidade: double.parse(operacao['quantidade']),
+          ),
+        );
+      }
+    }
+
+    notifyListeners(); // Notifica os listeners sobre as mudanças
+  }
+
+  // Função para salvar uma operação no histórico (exemplo de como adicionar operações ao histórico)
+  Future<void> addOperacao(Historico novaOperacao) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Obtém o histórico atual
+    String? historicoStr = prefs.getString('historico');
+    List<dynamic> historico = historicoStr != null ? jsonDecode(historicoStr) : [];
+
+    // Adiciona a nova operação no histórico
+    historico.add({
+      'sigla': novaOperacao.moeda.sigla,
+      'data_operacao': novaOperacao.dataOperacao.millisecondsSinceEpoch,
+      'tipo_operacao': novaOperacao.tipoOperacao,
+      'valor': novaOperacao.valor,
+      'quantidade': novaOperacao.quantidade.toString(),
+    });
+
+    // Armazena o histórico atualizado no SharedPreferences
+    await prefs.setString('historico', jsonEncode(historico));
+
+    // Atualiza o histórico localmente
+    _historico.add(novaOperacao);
+
+    notifyListeners(); // Notifica os listeners sobre as mudanças
   }
 }

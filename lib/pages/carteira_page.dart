@@ -1,4 +1,5 @@
 import 'package:cripto/configs/app_setings.dart';
+import 'package:cripto/models/historico.dart';
 import 'package:cripto/models/posicao.dart';
 import 'package:cripto/repositories/conta_repository.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -57,6 +58,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
               ),
             ),
             loadGrafico(),
+             loadHistorico()
           ],
         ),
       ),
@@ -169,5 +171,23 @@ loadCarteira() {
               )
             ],
           );
+  }
+  loadHistorico(){
+    final historico = conta.historico;
+    final date = DateFormat('dd/MM/yyy - hh:mm');
+    List<Widget> widgets = [];
+    for(var operacao in historico){
+      widgets.add(ListTile(
+        title: Text(operacao.moeda.nome),
+        subtitle: Text(date.format(operacao.dataOperacao)),
+        trailing: Text(real.format(operacao.moeda.preco * operacao.quantidade)),
+      ));
+      widgets.add(const Divider());
+    }
+    return Column(
+      children:widgets,
+    );
+
+
   }
 }
