@@ -1,4 +1,5 @@
-import 'package:cripto/pages/home_page.dart';
+// import 'package:cripto/pages/home_page.dart';
+import 'package:cripto/widget/auth_check.dart';
 // import 'package:cripto/pages/moedas_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MeuAplicativo extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(
+      home: const AuthCheck(
         
       ),
     );

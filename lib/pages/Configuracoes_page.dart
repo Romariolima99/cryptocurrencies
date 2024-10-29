@@ -1,5 +1,6 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/repositories/conta_repository.dart';
+import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -33,7 +34,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
               subtitle: Text(
                 real.format(conta.saldo),
                 style: const TextStyle(
-                  fontSize: 25, 
+                  fontSize: 25,
                   color: Colors.indigo,
                 ),
               ),
@@ -43,6 +44,28 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
               ),
             ),
             const Divider(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              child: OutlinedButton(
+                onPressed: () => context.read<AuthService>().logout(),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor:
+                      Colors.red, // Substitui o 'primary' por 'foregroundColor'
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        "Sair do App",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "775825973558",
+    "project_id": "cripto-moedas-app-db93e",
+    "storage_bucket": "cripto-moedas-app-db93e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775825973558:android:1745c6fba24584cce95397",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbFHoVSxAzOi6i7FpN1A9EkDMjskm4d5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

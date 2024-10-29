@@ -1,5 +1,4 @@
 import 'package:cripto/configs/app_setings.dart';
-import 'package:cripto/models/historico.dart';
 import 'package:cripto/models/posicao.dart';
 import 'package:cripto/repositories/conta_repository.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -58,7 +57,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
               ),
             ),
             loadGrafico(),
-             loadHistorico()
+            loadHistorico()
           ],
         ),
       ),
@@ -75,51 +74,52 @@ class _CarteiraPageState extends State<CarteiraPage> {
     });
   }
 
-setGraficoDados(int index) {
-  if (index < 0 ) return; // Adicione esta verificação
+  setGraficoDados(int index) {
+    if (index < 0) return; // Adicione esta verificação
 
-  if (index == carteira.length) {
-    graficoLabel = 'saldo';
-    graficoValor = conta.saldo;
-  } else {
-    graficoLabel = carteira[index].moeda.nome;
-    graficoValor = carteira[index].moeda.preco * carteira[index].quantidade;
-  }
-}
-
-
-loadCarteira() {
-  carteira = conta.carteira; // Certifique-se de carregar a carteira aqui
-  setGraficoDados(index);
-  final tamanhoLista = carteira.length; // Remova o +1
-
-  return List.generate(tamanhoLista + 1, (i) { // Adicione 1 aqui
-    final isTouched = i == index;
-    final isSaldo = i == tamanhoLista; // Verifique se é o saldo
-
-    double porcentagem = 0;
-
-    if (isSaldo) {
-      porcentagem = conta.saldo / totalCarteira; // Aqui você não acessa carteira[i]
+    if (index == carteira.length) {
+      graficoLabel = 'saldo';
+      graficoValor = conta.saldo;
     } else {
-      porcentagem = (carteira[i].moeda.preco * carteira[i].quantidade) / totalCarteira;
+      graficoLabel = carteira[index].moeda.nome;
+      graficoValor = carteira[index].moeda.preco * carteira[index].quantidade;
     }
-    porcentagem *= 100;
+  }
 
-    return PieChartSectionData(
-      color: isTouched ? Colors.tealAccent : Colors.tealAccent[400],
-      value: porcentagem,
-      title: '${porcentagem.toStringAsFixed(0)}%',
-      radius: 50.0,
-      titleStyle: TextStyle(
-        fontSize: isTouched ? 20.0 : 20.0,
-        fontWeight: FontWeight.bold,
-        color: Colors.black87,
-      ),
-    );
-  });
-}
+  loadCarteira() {
+    carteira = conta.carteira; // Certifique-se de carregar a carteira aqui
+    setGraficoDados(index);
+    final tamanhoLista = carteira.length; // Remova o +1
 
+    return List.generate(tamanhoLista + 1, (i) {
+      // Adicione 1 aqui
+      final isTouched = i == index;
+      final isSaldo = i == tamanhoLista; // Verifique se é o saldo
+
+      double porcentagem = 0;
+
+      if (isSaldo) {
+        porcentagem =
+            conta.saldo / totalCarteira; // Aqui você não acessa carteira[i]
+      } else {
+        porcentagem =
+            (carteira[i].moeda.preco * carteira[i].quantidade) / totalCarteira;
+      }
+      porcentagem *= 100;
+
+      return PieChartSectionData(
+        color: isTouched ? Colors.tealAccent : Colors.tealAccent[400],
+        value: porcentagem,
+        title: '${porcentagem.toStringAsFixed(0)}%',
+        radius: 50.0,
+        titleStyle: TextStyle(
+          fontSize: isTouched ? 20.0 : 20.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.black87,
+        ),
+      );
+    });
+  }
 
   loadGrafico() {
     return (conta.saldo < 0)
@@ -172,11 +172,12 @@ loadCarteira() {
             ],
           );
   }
-  loadHistorico(){
+
+  loadHistorico() {
     final historico = conta.historico;
     final date = DateFormat('dd/MM/yyy - hh:mm');
     List<Widget> widgets = [];
-    for(var operacao in historico){
+    for (var operacao in historico) {
       widgets.add(ListTile(
         title: Text(operacao.moeda.nome),
         subtitle: Text(date.format(operacao.dataOperacao)),
@@ -185,9 +186,7 @@ loadCarteira() {
       widgets.add(const Divider());
     }
     return Column(
-      children:widgets,
+      children: widgets,
     );
-
-
   }
 }
