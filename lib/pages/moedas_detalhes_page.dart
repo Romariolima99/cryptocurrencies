@@ -25,23 +25,21 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   double quantidade = 0;
   late ContaRepository conta;
 
-  comprar() async{
-    if(_form.currentState!.validate()){
-    // salvar compra
-    await conta.comprar(widget.moeda, double.parse(_valor.text));
+  comprar() {
+    if (_form.currentState!.validate()) {
+      conta.comprar(widget.moeda, double.parse(_valor.text));
 
-    Navigator.pop(context);
+      Navigator.pop(context);
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Compra realizada com sucesso')),
-    );
-
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Compra realizada com sucesso')),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-  conta = Provider.of<ContaRepository>(context, listen: false);
+    conta = Provider.of<ContaRepository>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.moeda.nome),
@@ -115,7 +113,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                     return 'informe o valor da compra';
                   } else if (double.parse(value) < 50) {
                     return 'compra minima é 50,00 R\$';
-                  }else if (double.parse(value) > conta.saldo){
+                  } else if (double.parse(value) > conta.saldo) {
                     return 'você não tem saldo suficiente';
                   }
                 },

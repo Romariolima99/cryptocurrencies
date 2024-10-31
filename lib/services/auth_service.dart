@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class AuthExeption implements Exception {
+class AuthException implements Exception {
   String message;
 
-  AuthExeption({required this.message});
+  AuthException({required this.message});
 }
 
 class AuthService extends ChangeNotifier {
@@ -18,7 +18,7 @@ class AuthService extends ChangeNotifier {
 
   _authCheck() {
     _auth.authStateChanges().listen((User? user) {
-      user = (user == null) ? null : user;
+      this.user = user;
       isLoading = false;
       notifyListeners();
     });
@@ -35,9 +35,12 @@ class AuthService extends ChangeNotifier {
       _getUser();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        throw AuthExeption(message: 'A senha é muito fraca');
+        throw AuthException(message: 'A senha é muito fraca');
       } else if (e.code == 'email-already-in-use') {
-        throw AuthExeption(message: 'este email já esta cadastrado');
+        throw AuthException(message: 'Este email já está cadastrado');
+      } else {
+        throw AuthException(
+            message: 'Ocorreu um erro inesperado. Tente novamente.');
       }
     }
   }
@@ -48,9 +51,14 @@ class AuthService extends ChangeNotifier {
       _getUser();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        throw AuthExeption(message: 'Email não encontrado. cadastre-se');
-      } else if (e.code == 'wrong-password') {
-        throw AuthExeption(message: 'senha incorreta. Texte novamente');
+        throw AuthException(message: 'Email não encontrado. Cadastre-se.');
+      } else if (e.code == 'invalid-credential') {
+        throw AuthException(
+            message:
+                'Email não encontrado ou Senha incorreta. Tente novamente.');
+      } else {
+        throw AuthException(
+            message: 'Ocorreu um erro inesperado. Tente novamente.');
       }
     }
   }
