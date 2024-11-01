@@ -1,8 +1,9 @@
 {
   "project_info": {
     "project_number": "775825973558",
+    "firebase_url": "https://cripto-moedas-app-db93e-default-rtdb.firebaseio.com",
     "project_id": "cripto-moedas-app-db93e",
-    "storage_bucket": "cripto-moedas-app-db93e.appspot.com"
+    "storage_bucket": "cripto-moedas-app-db93e.firebasestorage.app"
   },
   "client": [
     {
