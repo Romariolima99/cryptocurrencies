@@ -15,33 +15,36 @@ class MoedasPage extends StatefulWidget {
 }
 
 class _MoedasPageState extends State<MoedasPage> {
-  final tabela = MoedaRepository.tabela;
+  late List<Moeda> tabela;
   late NumberFormat real;
-  late Map<String , String> loc;
+  late Map<String, String> loc;
   List<Moeda> selecionadas = [];
   late FavoritasRepository favoritas;
+  late MoedaRepository moedas;
 
-  readNumberFormat(){
+  readNumberFormat() {
     loc = context.watch<AppSettings>().locale;
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
   }
 
-  chageLanguageButton(){
+  chageLanguageButton() {
     final locale = loc['locale'] == 'pt_BR' ? 'en_US' : 'pt_BR';
     final name = loc['locale'] == 'pt_BR' ? '\$' : 'R\$';
 
-    return PopupMenuButton(icon: const Icon(Icons.language),
-    itemBuilder: (context) => [
-      PopupMenuItem(child: ListTile(
-      leading: Icon(Icons.swap_vert),
-      title: Text('Usar $locale'),
-      onTap: (){
-        context.read<AppSettings>().setLocale(locale, name);
-        Navigator.pop(context);
-      },
-     ),
-     ),
-     ],
+    return PopupMenuButton(
+      icon: const Icon(Icons.language),
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          child: ListTile(
+            leading: const Icon(Icons.swap_vert),
+            title: Text('Usar $locale'),
+            onTap: () {
+              context.read<AppSettings>().setLocale(locale, name);
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ],
     );
   }
 
@@ -49,9 +52,7 @@ class _MoedasPageState extends State<MoedasPage> {
     if (selecionadas.isEmpty) {
       return AppBar(
         title: const Text('Cripto Moedas'),
-        actions: [
-          chageLanguageButton()
-        ],
+        actions: [chageLanguageButton()],
         centerTitle: true, // Centraliza o título
         backgroundColor: Colors.blue, // Define a cor azul para a AppBar
       );
@@ -73,14 +74,16 @@ class _MoedasPageState extends State<MoedasPage> {
     }
   }
 
-  mostrarDetalhes(Moeda moeda){
-    Navigator.push(context, MaterialPageRoute(
-      builder:(_) => MoedasDetalhesPage(moeda: moeda),
+  mostrarDetalhes(Moeda moeda) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => MoedasDetalhesPage(moeda: moeda),
       ),
-      );
+    );
   }
 
-  limparSelecionadas(){
+  limparSelecionadas() {
     setState(() {
       selecionadas = [];
     });
@@ -89,6 +92,8 @@ class _MoedasPageState extends State<MoedasPage> {
   @override
   Widget build(BuildContext context) {
     favoritas = Provider.of<FavoritasRepository>(context);
+    moedas = Provider.of<MoedaRepository>(context); //verificar depois
+    tabela = moedas.tabela;
     readNumberFormat();
     return Scaffold(
       appBar: appApbarDinamica(),
@@ -104,7 +109,7 @@ class _MoedasPageState extends State<MoedasPage> {
                   )
                 : SizedBox(
                     width: 40,
-                    child: Image.asset(tabela[moeda].icone),
+                    child: Image.network(tabela[moeda].icone),
                   ),
             title: Row(
               children: [
@@ -115,8 +120,8 @@ class _MoedasPageState extends State<MoedasPage> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                if(favoritas.lista.contains(tabela[moeda]))
-                const Icon(Icons.circle, color: Colors.amber, size: 8),
+                if (favoritas.lista.contains(tabela[moeda]))
+                  const Icon(Icons.circle, color: Colors.amber, size: 8),
               ],
             ),
             trailing: Text(real.format(tabela[moeda].preco)),
@@ -129,7 +134,7 @@ class _MoedasPageState extends State<MoedasPage> {
                     : selecionadas.add(tabela[moeda]);
               });
             },
-            onTap: () => mostrarDetalhes (tabela[moeda]),
+            onTap: () => mostrarDetalhes(tabela[moeda]),
           );
         },
         padding: const EdgeInsets.all(16),

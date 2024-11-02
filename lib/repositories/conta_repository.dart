@@ -9,14 +9,14 @@ import 'package:cripto/models/posicao.dart';
 class ContaRepository extends ChangeNotifier {
   List<Posicao> _carteira = []; // Inicialização da carteira
   List<Historico> _historico = [];
-
   double _saldo = 0;
+  MoedaRepository moedas;
 
   double get saldo => _saldo;
   List<Posicao> get carteira => _carteira; // Getter para carteira loadHistorico
-  List<Historico> get historico => _historico; 
+  List<Historico> get historico => _historico;
 
-  ContaRepository() {
+  ContaRepository({required this.moedas}) {
     _initRepository();
   }
 
@@ -74,7 +74,8 @@ class ContaRepository extends ChangeNotifier {
 
     // Registrar no histórico
     String? historicoStr = prefs.getString('historico');
-    List<dynamic> historico = historicoStr != null ? jsonDecode(historicoStr) : [];
+    List<dynamic> historico =
+        historicoStr != null ? jsonDecode(historicoStr) : [];
 
     historico.add({
       'sigla': moeda.sigla,
@@ -106,7 +107,8 @@ class ContaRepository extends ChangeNotifier {
     if (carteiraStr != null) {
       List<dynamic> posicoes = jsonDecode(carteiraStr);
       for (var posicao in posicoes) {
-        Moeda moeda = MoedaRepository.tabela.firstWhere((m) => m.sigla == posicao['sigla']);
+        Moeda moeda =
+            moedas.tabela.firstWhere((m) => m.sigla == posicao['sigla']);
         _carteira.add(Posicao(
           moeda: moeda,
           quantidade: double.parse(posicao['quantidade']),
@@ -131,7 +133,7 @@ class ContaRepository extends ChangeNotifier {
   //   notifyListeners();
   // }
 
- Future<void> _getHistorico() async {
+  Future<void> _getHistorico() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     _historico = []; // Limpa o histórico para garantir que não se duplique.
 
@@ -142,14 +144,15 @@ class ContaRepository extends ChangeNotifier {
 
       for (var operacao in operacoes) {
         // Busca a moeda pelo sigla
-        Moeda moeda = MoedaRepository.tabela.firstWhere(
+        Moeda moeda = moedas.tabela.firstWhere(
           (m) => m.sigla == operacao['sigla'],
         );
 
         // Adiciona a operação no histórico
         _historico.add(
           Historico(
-            dataOperacao: DateTime.fromMillisecondsSinceEpoch(operacao['data_operacao']),
+            dataOperacao:
+                DateTime.fromMillisecondsSinceEpoch(operacao['data_operacao']),
             tipoOperacao: operacao['tipo_operacao'],
             moeda: moeda,
             valor: operacao['valor'],
@@ -168,7 +171,8 @@ class ContaRepository extends ChangeNotifier {
 
     // Obtém o histórico atual
     String? historicoStr = prefs.getString('historico');
-    List<dynamic> historico = historicoStr != null ? jsonDecode(historicoStr) : [];
+    List<dynamic> historico =
+        historicoStr != null ? jsonDecode(historicoStr) : [];
 
     // Adiciona a nova operação no histórico
     historico.add({

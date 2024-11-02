@@ -42,6 +42,7 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
   cloud_firestore: ^5.4.4
+  http: ^1.2.2
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -71,9 +72,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - images/bitcoin.png
-    - images/ethereum-eth-logo.png
+  # assets:
+  #   - images/bitcoin.png
+  #   - images/ethereum-eth-logo.png
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

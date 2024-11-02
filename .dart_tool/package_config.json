@@ -152,6 +152,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "http",
+      "rootUri": "file:///home/romario/.pub-cache/hosted/pub.dev/http-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///home/romario/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -392,7 +398,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-01T21:27:09.755448Z",
+  "generated": "2024-11-02T00:22:15.162527Z",
   "generator": "pub",
   "generatorVersion": "3.5.4",
   "flutterRoot": "file:///opt/flutter",

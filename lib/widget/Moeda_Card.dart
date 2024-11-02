@@ -2,14 +2,19 @@ import 'package:cripto/models/moedas.dart';
 // import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
+// import 'package:cripto/repositories/moeda_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MoedaCard extends StatefulWidget {
-  final Moeda moeda; // Corrigido para final, já que não será alterado após a construção
+  final Moeda
+      moeda; // Corrigido para final, já que não será alterado após a construção
 
-   MoedaCard({Key? key, required this.moeda,}) : super(key: key); // Removida a duplicata do parâmetro moeda
+  MoedaCard({
+    Key? key,
+    required this.moeda,
+  }) : super(key: key); // Removida a duplicata do parâmetro moeda
 
   @override
   State<MoedaCard> createState() => _MoedaCardState();
@@ -43,25 +48,29 @@ class _MoedaCardState extends State<MoedaCard> {
           padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
           child: Row(
             children: [
-              Image.asset(
-                widget.moeda.icone, // Corrigido de widget.moeda para widget.moedas
+              Image.network(
+                widget.moeda
+                    .icone, // Corrigido de widget.moeda para widget.moedas
                 height: 40,
               ),
               Expanded(
                 child: Container(
-                  margin: const EdgeInsets.only(left: 12), // Corrigido de EdgeInsets.all
+                  margin: const EdgeInsets.only(
+                      left: 12), // Corrigido de EdgeInsets.all
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.moeda.nome, // Corrigido de widget.moeda para widget.moedas
+                        widget.moeda
+                            .nome, // Corrigido de widget.moeda para widget.moedas
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        widget.moeda.sigla, // Corrigido de widget.moeda para widget.moedas
+                        widget.moeda
+                            .sigla, // Corrigido de widget.moeda para widget.moedas
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black45,
@@ -72,7 +81,8 @@ class _MoedaCardState extends State<MoedaCard> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 decoration: BoxDecoration(
                   color: precoColor['down']!.withOpacity(0.05),
                   border: Border.all(
@@ -81,7 +91,8 @@ class _MoedaCardState extends State<MoedaCard> {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
-                  real.format(widget.moeda.preco), // Corrigido de widget.moeda para widget.moedas
+                  real.format(widget.moeda
+                      .preco), // Corrigido de widget.moeda para widget.moedas
                   style: TextStyle(
                     fontSize: 16,
                     color: precoColor['down'],
@@ -98,7 +109,7 @@ class _MoedaCardState extends State<MoedaCard> {
                       onTap: () {
                         Navigator.pop(context);
                         Provider.of<FavoritasRepository>(context, listen: false)
-                        .remove(widget.moeda);
+                            .remove(widget.moeda);
                       },
                     ),
                   ),
