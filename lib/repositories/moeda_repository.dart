@@ -27,9 +27,9 @@ class MoedaRepository extends ChangeNotifier {
         // Certifique-se de que os campos correspondem ao que a API retorna
         return Moeda(
           baseId: moeda['id'], // Altere conforme necessário
-          icone: moeda['image_url'] ?? '', // Verifique se a chave existe
-          sigla: moeda['symbol'] ?? '',
-          nome: moeda['name'] ?? '',
+          icone: moeda['image_url'], // Verifique se a chave existe
+          sigla: moeda['symbol'],
+          nome: moeda['name'],
           preco:
               double.tryParse(moeda['latest_price']?.toString() ?? '0') ?? 0.0,
           timestamp: DateTime.now(), // Use um timestamp adequado se disponível
