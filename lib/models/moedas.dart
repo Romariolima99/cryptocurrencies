@@ -44,4 +44,22 @@ class Moeda {
       mudancaPeriodoTotal: json['change_total'].toDouble(),
     );
   }
+
+  // Método toJson
+  Map<String, dynamic> toJson() {
+    return {
+      'base_id': baseId,
+      'icon': icone,
+      'name': nome,
+      'symbol': sigla,
+      'price': preco,
+      'timestamp': timestamp.millisecondsSinceEpoch,
+      'change_hour': mudancaHora,
+      'change_day': mudancaDia,
+      'change_week': mudancaSemana,
+      'change_month': mudancaMes,
+      'change_year': mudancaAno,
+      'change_total': mudancaPeriodoTotal,
+    };
+  }
 }
