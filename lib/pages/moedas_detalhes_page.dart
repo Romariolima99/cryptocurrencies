@@ -1,5 +1,6 @@
 import 'package:cripto/models/moedas.dart';
 import 'package:cripto/repositories/conta_repository.dart';
+import 'package:cripto/widget/grafico_historico.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -24,6 +25,16 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final _valor = TextEditingController();
   double quantidade = 0;
   late ContaRepository conta;
+  Widget grafico = Container();
+  bool graficoLoaded = false;
+
+  getGrafico() {
+    if (!graficoLoaded) {
+      grafico = GraficoHistorico(moeda: widget.moeda);
+      graficoLoaded = true;
+    }
+    return grafico;
+  }
 
   comprar() {
     if (_form.currentState!.validate()) {
@@ -68,6 +79,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                 ],
               ),
             ),
+            getGrafico(),
             (quantidade > 0)
                 ? SizedBox(
                     width: MediaQuery.of(context).size.width,

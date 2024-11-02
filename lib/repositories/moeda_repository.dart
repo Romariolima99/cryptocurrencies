@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:cripto/models/moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-// import 'moeda.dart'; // Certifique-se de que a classe Moeda esteja importada corretamente
 
 class MoedaRepository extends ChangeNotifier {
   List<Moeda> _tabela = [];
@@ -14,6 +13,25 @@ class MoedaRepository extends ChangeNotifier {
   MoedaRepository() {
     _fetchMoedas();
     _checkPrecos(); // Inicie a busca pelas moedas
+  }
+
+  getHistoricoMoeda(Moeda moeda) async {
+    final response = await http.get(
+      Uri.parse(
+          'https://api.coinbase.com/v2/assets/prices${moeda.baseId}base=BRL'),
+    );
+    List<Map<String, dynamic>> precos = [];
+    if (response.statusCode == 200) {
+      final json = jsonDecode(response.body);
+      final Map<String, dynamic> moeda = json['data']['prices'];
+      precos.add(moeda['hour']);
+      precos.add(moeda['day']);
+      precos.add(moeda['week']);
+      precos.add(moeda['month']);
+      precos.add(moeda['year']);
+      precos.add(moeda['hour']);
+    }
+    return precos;
   }
 
   Future<void> _checkPrecos() async {

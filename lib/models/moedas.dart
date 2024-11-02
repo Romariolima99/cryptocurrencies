@@ -53,7 +53,7 @@ class Moeda {
       'name': nome,
       'symbol': sigla,
       'price': preco,
-      'timestamp': timestamp.millisecondsSinceEpoch,
+      'timestamp': timestamp,
       'change_hour': mudancaHora,
       'change_day': mudancaDia,
       'change_week': mudancaSemana,
