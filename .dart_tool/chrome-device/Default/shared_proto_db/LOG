@@ -1,2 +1,3 @@
-2024/11/01-20:22:47.037 ff3c Creating DB /tmp/flutter_tools.BLSOFX/flutter_tools_chrome_device.BRVZSN/Default/shared_proto_db since it was missing.
-2024/11/01-20:22:47.062 ff3c Reusing MANIFEST /tmp/flutter_tools.BLSOFX/flutter_tools_chrome_device.BRVZSN/Default/shared_proto_db/MANIFEST-000001
+2024/11/01-21:31:29.328 14bdf Reusing MANIFEST /tmp/flutter_tools.NKPIYA/flutter_tools_chrome_device.ISOJFR/Default/shared_proto_db/MANIFEST-000001
+2024/11/01-21:31:29.328 14bdf Recovering log #3
+2024/11/01-21:31:29.329 14bdf Reusing old log /tmp/flutter_tools.NKPIYA/flutter_tools_chrome_device.ISOJFR/Default/shared_proto_db/000003.log 

@@ -30,8 +30,9 @@ class MoedaRepository extends ChangeNotifier {
           icone: moeda['image_url'], // Verifique se a chave existe
           sigla: moeda['symbol'],
           nome: moeda['name'],
-          preco:
-              double.tryParse(moeda['latest_price']?.toString() ?? '0') ?? 0.0,
+          preco: double.tryParse(
+                  moeda['latest_price']['amount']?.toString() ?? '0') ??
+              0.0,
           timestamp: DateTime.now(), // Use um timestamp adequado se disponível
           mudancaHora: 0.0, // Ajuste conforme necessário
           mudancaDia: 0.0, // Ajuste conforme necessário
