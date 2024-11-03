@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:cripto/models/historico.dart';
 import 'package:cripto/models/moedas.dart';
-import 'package:cripto/repositories/moeda_repository.dart';
+import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cripto/models/posicao.dart';
@@ -107,8 +107,8 @@ class ContaRepository extends ChangeNotifier {
     if (carteiraStr != null) {
       List<dynamic> posicoes = jsonDecode(carteiraStr);
       for (var posicao in posicoes) {
-        Moeda moeda =
-            moedas.tabela.firstWhere((m) => m.sigla == posicao['sigla']);
+        Moeda moeda = MoedaRepository.tabela
+            .firstWhere((m) => m.sigla == posicao['sigla']);
         _carteira.add(Posicao(
           moeda: moeda,
           quantidade: double.parse(posicao['quantidade']),
@@ -144,7 +144,7 @@ class ContaRepository extends ChangeNotifier {
 
       for (var operacao in operacoes) {
         // Busca a moeda pelo sigla
-        Moeda moeda = moedas.tabela.firstWhere(
+        Moeda moeda = MoedaRepository.tabela.firstWhere(
           (m) => m.sigla == operacao['sigla'],
         );
 

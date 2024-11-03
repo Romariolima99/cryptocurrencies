@@ -2,7 +2,8 @@ import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cripto/database/db_firestore.dart';
 import 'package:cripto/models/moedas.dart';
-import 'package:cripto/repositories/moeda_repository.dart';
+import 'package:cripto/repositories/mocks_moedas.dart';
+// import 'package:cripto/repositories/moeda_repository.dart';
 import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class FavoritasRepository extends ChangeNotifier {
       final snapshot =
           await db.collection('products/${auth.user!.uid}/favoritas').get();
       snapshot.docs.forEach((doc) {
-        Moeda moeda = moedas.tabela
+        Moeda moeda = MoedaRepository.tabela
             .firstWhere((moeda) => moeda.sigla == doc.get('sigla'));
         _lista.add(moeda);
         notifyListeners();

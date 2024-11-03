@@ -45,7 +45,7 @@ class Moeda {
     );
   }
 
-  // Método toJson
+// Método toJson ajustado
   Map<String, dynamic> toJson() {
     return {
       'base_id': baseId,
@@ -53,7 +53,8 @@ class Moeda {
       'name': nome,
       'symbol': sigla,
       'price': preco,
-      'timestamp': timestamp,
+      'timestamp': timestamp
+          .millisecondsSinceEpoch, // Converte DateTime para milissegundos
       'change_hour': mudancaHora,
       'change_day': mudancaDia,
       'change_week': mudancaSemana,

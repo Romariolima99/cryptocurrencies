@@ -2,7 +2,7 @@ import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/moedas.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
-import 'package:cripto/repositories/moeda_repository.dart';
+import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -93,7 +93,7 @@ class _MoedasPageState extends State<MoedasPage> {
   Widget build(BuildContext context) {
     favoritas = Provider.of<FavoritasRepository>(context);
     moedas = Provider.of<MoedaRepository>(context); //verificar depois
-    tabela = moedas.tabela;
+    tabela = MoedaRepository.tabela;
     readNumberFormat();
     return Scaffold(
       appBar: appApbarDinamica(),
