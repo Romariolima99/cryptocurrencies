@@ -1,6 +1,8 @@
 import 'package:cripto/configs/app_setings.dart';
+import 'package:cripto/pages/documentos_page.dart';
 import 'package:cripto/repositories/conta_repository.dart';
 import 'package:cripto/services/auth_service.dart';
+// import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -41,6 +43,18 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
               trailing: IconButton(
                 onPressed: () => updateSaldo(),
                 icon: const Icon(Icons.edit),
+              ),
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.camera_alt),
+              title: const Text('Escanear a CNH ou RG'),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DocumentosPage(),
+                  fullscreenDialog: true, // Corrigido aqui
+                ),
               ),
             ),
             const Divider(),
