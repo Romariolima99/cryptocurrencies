@@ -95,6 +95,27 @@ class _GraficoHistoricoState extends State<GraficoHistorico> {
     );
   }
 
+  chartButton(Periodo p, String label) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: OutlinedButton(
+        onPressed: () => setState(() => periodo = p),
+        style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            return (periodo != p) ? Colors.grey : Colors.black; // Cor do texto
+          }),
+          backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+            return (periodo == p)
+                ? (Colors.indigo[50] ??
+                    Colors.indigo) // Valor padrão caso seja null
+                : Colors.transparent; // Cor de fundo
+          }),
+        ),
+        child: Text(label),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     repositorio = MoedaRepository();
@@ -112,13 +133,29 @@ class _GraficoHistoricoState extends State<GraficoHistorico> {
               aspectRatio: 2,
               child: Stack(
                 children: [
-                  ValueListenableBuilder<bool>(
-                    valueListenable: loaded,
-                    builder: (context, isLoaded, _) {
-                      return isLoaded
-                          ? LineChart(getChartData())
-                          : const Center(child: CircularProgressIndicator());
-                    },
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        chartButton(Periodo.hora, '1H'),
+                        chartButton(Periodo.dia, '24H'),
+                        chartButton(Periodo.semana, '7D'),
+                        chartButton(Periodo.mes, 'Mês'),
+                        chartButton(Periodo.ano, 'Ano'),
+                        chartButton(Periodo.total, 'Tudo'),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 80),
+                    child: ValueListenableBuilder<bool>(
+                      valueListenable: loaded,
+                      builder: (context, isLoaded, _) {
+                        return isLoaded
+                            ? LineChart(getChartData())
+                            : const Center(child: CircularProgressIndicator());
+                      },
+                    ),
                   ),
                 ],
               ),
