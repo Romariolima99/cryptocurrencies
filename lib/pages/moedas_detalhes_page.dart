@@ -127,11 +127,13 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                   }
                 },
                 onChanged: (value) {
-                  setState(() {
-                    quantidade = (value.isEmpty)
-                        ? 0
-                        : double.parse(value) / widget.moeda.preco;
-                  });
+                  setState(
+                    () {
+                      quantidade = (value.isEmpty)
+                          ? 0
+                          : double.parse(value) / widget.moeda.preco;
+                    },
+                  );
                 },
               ),
             ),
