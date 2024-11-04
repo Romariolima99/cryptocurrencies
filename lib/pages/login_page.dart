@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       if (isLogin) {
         titulo = 'Bem vindo';
         actionButton = 'Login';
-        toggleButton = 'ainda não tem conta? cadastra-se agora';
+        toggleButton = 'Ainda não tem conta? Cadastra-se agora!';
       } else {
         titulo = 'Crie sua conta';
         actionButton = 'Cadastrar';
