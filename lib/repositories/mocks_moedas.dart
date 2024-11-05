@@ -102,7 +102,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Lido wstETH.png',
+      icone: 'images/LidowstETH.png',
       nome: 'Lido wstETH',
       sigla: 'WSTETH',
       preco: 30.00,
@@ -130,7 +130,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/SHIBA INU.png',
+      icone: 'images/SHIBAINU.png',
       nome: 'SHIBA INU',
       sigla: 'SHIB',
       preco: 30.00,
@@ -256,7 +256,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Wrapped TRON.png',
+      icone: 'images/WrappedTRON.png',
       nome: 'Wrapped TRON',
       sigla: 'WTRX',
       preco: 30.00,
