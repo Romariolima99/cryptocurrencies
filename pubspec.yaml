@@ -49,7 +49,7 @@ dev_dependencies:
 
   flutter_lints: ^4.0.0
 
-# The following section is specific to Flutter packages.
+# The following section is specific to Flutter packages.r
 flutter:
   assets:
     - images/background.jpeg
@@ -60,12 +60,12 @@ flutter:
     - images/Cardano.png
     - images/Chainlink.png
     - images/Dogecoin.png
-    - images/Lido wstETH.png
+    - images/LidowstETH.png
     - images/Litecoin.png
-    - images/SHIBA INU.png
+    - images/SHIBAINU.png
     - images/SUI.png
     - images/Tether.png
-    - images/UNUS SED LEO.png
+    - images/UNUSSEDLEO.png
     - images/USDS.jpeg
     - images/XRP.png
     
