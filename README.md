@@ -38,3 +38,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # Gerenciamento de Estado
 - A aplicação utiliza o Provider para gerenciamento de estado. Cada tela ou serviço que precisa de dados dinâmicos, como o histórico de compras ou as moedas favoritas, utiliza o Provider para acessar os dados de forma eficiente e reativa.
+
+# Demonstração
+
+- [Veja o Projeto](https://cryptocurrencies-taupe.vercel.app/)
