@@ -7360,11 +7360,10 @@ this.b=b},
 a2V:function a2V(a,b){this.a=a
 this.b=b},
 aaA:function aaA(){},
-aOK(a){var s=a.code,r=self
-if(J.c(s,r.MediaError.MEDIA_ERR_ABORTED))return B.C2
-else if(J.c(a.code,r.MediaError.MEDIA_ERR_NETWORK))return B.C4
-else if(J.c(a.code,r.MediaError.MEDIA_ERR_DECODE))return B.C3
-else if(J.c(a.code,r.MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED))return B.C5
+aOK(a){if(J.c(a.code,1))return B.C2
+else if(J.c(a.code,2))return B.C4
+else if(J.c(a.code,3))return B.C3
+else if(J.c(a.code,4))return B.C5
 else return B.C6},
 fa:function fa(a){this.a=a},
 yN:function yN(a,b){this.a=a
@@ -43195,7 +43194,7 @@ $0(){var s=this.a,r=this.b
 s.r=r
 if(r){s.w="Crypto Currencies"
 s.x="Login"
-s.y="Ainda n\xe3o tem conta? Cadastra-se agora!"}else{s.w="Crie sua conta"
+s.y="Ainda n\xe3o tem conta? Cadastre-se agora!"}else{s.w="Crie sua conta"
 s.x="Cadastrar"
 s.y="Voltar para o Login"}},
 $S:0}
@@ -96842,7 +96841,7 @@ s($,"b13","aLe",()=>A.iM(t.yn))
 s($,"b2z","aM_",()=>A.iM(t.hF))
 s($,"b0L","aL5",()=>new A.a4n(A.aQK(A.aQP("[DEFAULT]"))))
 r($,"b2f","a0W",()=>{var q="Chainlink",p="Dogecoin",o="SHIB",n="UNUS SED LEO",m="USDS",l="WETH",k="WTRX"
-return A.b([A.e3("bitcoin","images/Bitcoin.png",45,2,0.5,12,150,5,"Bitcoin",1509,"BTC",A.e0()),A.e3("ethereum","images/Ethereum.png",38.5,1.5,-0.2,10.8,120,4.2,"Ethereum",1200,"ETH",A.e0()),A.e3("AVAX","images/Avalanche.png",20,0.9,0.1,8,85,3.1,"Avalanche",0.99,"AVAX",A.e0()),A.e3("BNB","images/BNB.png",15,1,-0.3,6.5,60,2.8,"BNB",2.5,"BNB",A.e0()),A.e3("Cardano","images/Cardano.png",25,1.2,0.2,9.2,90,3.5,"Cardano",30,"ADA",A.e0()),A.e3(q,"images/Chainlink.png",25,1.2,0.2,9.2,90,3.5,q,30,"LINK",A.e0()),A.e3(q,"images/Dogecoin.png",25,1.2,0.2,9.2,90,3.5,p,30,"DOGE",A.e0()),A.e3("WSTETH","images/LidowstETH.png",25,1.2,0.2,9.2,90,3.5,"Lido wstETH",30,"WSTETH",A.e0()),A.e3(q,"images/Litecoin.png",25,1.2,0.2,9.2,90,3.5,p,30,"Litecoin",A.e0()),A.e3(o,"images/SHIBAINU.png",25,1.2,0.2,9.2,90,3.5,"SHIBA INU",30,o,A.e0()),A.e3(o,"images/Solana.png",25,1.2,0.2,9.2,90,3.5,"Solana",30,"SOL",A.e0()),A.e3("SUI","images/SUI.png",25,1.2,0.2,9.2,90,3.5,"SUI",30,"SUI",A.e0()),A.e3("Tether","images/Tether.png",25,1.2,0.2,9.2,90,3.5,"Tether",30,"USDT",A.e0()),A.e3("Toncoin","images/Toncoin.png",25,1.2,0.2,9.2,90,3.5,"Toncoin",30,"TON",A.e0()),A.e3(n,"images/UNUS SED LEO.png",25,1.2,0.2,9.2,90,3.5,n,30,"LEO",A.e0()),A.e3(m,"images/USDS.jpeg",25,1.2,0.2,9.2,90,3.5,m,30,m,A.e0()),A.e3(l,"images/WETH.png",25,1.2,0.2,9.2,90,3.5,l,30,l,A.e0()),A.e3("WBTC","images/Wrapped Bitcoin.png",25,1.2,0.2,9.2,90,3.5,"Wrapped Bitcoin",30,"WBTC",A.e0()),A.e3(k,"images/WrappedTRON.png",25,1.2,0.2,9.2,90,3.5,"Wrapped TRON",30,k,A.e0()),A.e3(k,"images/XRP.png",25,1.2,0.2,9.2,90,3.5,"XRP",30,"XRP",A.e0())],t.v2)})
+return A.b([A.e3("bitcoin","assets/images/Bitcoin.png",45,2,0.5,12,150,5,"Bitcoin",1509,"BTC",A.e0()),A.e3("ethereum","assets/images/Ethereum.png",38.5,1.5,-0.2,10.8,120,4.2,"Ethereum",1200,"ETH",A.e0()),A.e3("AVAX","assets/images/Avalanche.png",20,0.9,0.1,8,85,3.1,"Avalanche",0.99,"AVAX",A.e0()),A.e3("BNB","assets/images/BNB.png",15,1,-0.3,6.5,60,2.8,"BNB",2.5,"BNB",A.e0()),A.e3("Cardano","assets/images/Cardano.png",25,1.2,0.2,9.2,90,3.5,"Cardano",30,"ADA",A.e0()),A.e3(q,"assets/images/Chainlink.png",25,1.2,0.2,9.2,90,3.5,q,30,"LINK",A.e0()),A.e3(q,"assets/images/Dogecoin.png",25,1.2,0.2,9.2,90,3.5,p,30,"DOGE",A.e0()),A.e3("WSTETH","assets/images/LidowstETH.png",25,1.2,0.2,9.2,90,3.5,"Lido wstETH",30,"WSTETH",A.e0()),A.e3(q,"assets/images/Litecoin.png",25,1.2,0.2,9.2,90,3.5,p,30,"Litecoin",A.e0()),A.e3(o,"assets/images/SHIBAINU.png",25,1.2,0.2,9.2,90,3.5,"SHIBA INU",30,o,A.e0()),A.e3(o,"assets/images/Solana.png",25,1.2,0.2,9.2,90,3.5,"Solana",30,"SOL",A.e0()),A.e3("SUI","assets/images/SUI.png",25,1.2,0.2,9.2,90,3.5,"SUI",30,"SUI",A.e0()),A.e3("Tether","assets/images/Tether.png",25,1.2,0.2,9.2,90,3.5,"Tether",30,"USDT",A.e0()),A.e3("Toncoin","assets/images/Toncoin.png",25,1.2,0.2,9.2,90,3.5,"Toncoin",30,"TON",A.e0()),A.e3(n,"assets/images/UNUSSEDLEO.png",25,1.2,0.2,9.2,90,3.5,n,30,"LEO",A.e0()),A.e3(m,"assets/images/USDS.jpeg",25,1.2,0.2,9.2,90,3.5,m,30,m,A.e0()),A.e3(l,"assets/images/WETH.png",25,1.2,0.2,9.2,90,3.5,l,30,l,A.e0()),A.e3("WBTC","assets/images/WrappedBitcoin.png",25,1.2,0.2,9.2,90,3.5,"Wrapped Bitcoin",30,"WBTC",A.e0()),A.e3(k,"assets/images/WrappedTRON.png",25,1.2,0.2,9.2,90,3.5,"Wrapped TRON",30,k,A.e0()),A.e3(k,"assets/images/XRP.png",25,1.2,0.2,9.2,90,3.5,"XRP",30,"XRP",A.e0())],t.v2)})
 s($,"b1b","Jh",()=>new A.H())
 s($,"b2g","aCJ",()=>new A.H())
 s($,"b2h","aCK",()=>new A.H())
