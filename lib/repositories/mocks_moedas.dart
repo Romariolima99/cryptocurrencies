@@ -18,7 +18,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 150.0,
     ),
     Moeda(
-      icone: 'assets/images/Ethereum.png',
+      icone: 'https://i.imgur.com/ICEbb90.png',
       nome: 'Ethereum',
       sigla: 'ETH',
       preco: 1200.00,
@@ -32,7 +32,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 120.0,
     ),
     Moeda(
-      icone: 'assets/images/Avalanche.png',
+      icone: 'https://i.imgur.com/p5LOBMG.png',
       nome: 'Avalanche',
       sigla: 'AVAX',
       preco: 0.99,
@@ -46,7 +46,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 85.0,
     ),
     Moeda(
-      icone: 'assets/images/BNB.png',
+      icone: 'https://i.imgur.com/NCSAD6h.png',
       nome: 'BNB',
       sigla: 'BNB',
       preco: 2.50,
@@ -60,7 +60,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 60.0,
     ),
     Moeda(
-      icone: 'assets/images/Cardano.png',
+      icone: 'https://i.imgur.com/ikeUlJl.png',
       nome: 'Cardano',
       sigla: 'ADA',
       preco: 30.00,
@@ -74,7 +74,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/Chainlink.png',
+      icone: 'https://i.imgur.com/4455dEw.png',
       nome: 'Chainlink',
       sigla: 'LINK',
       preco: 30.00,
@@ -116,7 +116,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/Litecoin.png',
+      icone: 'https://i.imgur.com/YKdWmqq.png',
       nome: 'Dogecoin',
       sigla: 'Litecoin',
       preco: 30.00,
@@ -130,7 +130,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/SHIBAINU.png',
+      icone: 'https://i.imgur.com/CumXwMQ.png',
       nome: 'SHIBA INU',
       sigla: 'SHIB',
       preco: 30.00,
@@ -144,7 +144,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/Solana.png',
+      icone: 'https://i.imgur.com/HgIoRC1.png',
       nome: 'Solana',
       sigla: 'SOL',
       preco: 30.00,
@@ -158,7 +158,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/SUI.png',
+      icone: 'https://i.imgur.com/Wu9UNH9.pngg',
       nome: 'SUI',
       sigla: 'SUI',
       preco: 30.00,
@@ -172,7 +172,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/Tether.png',
+      icone: 'https://i.imgur.com/3SDQd15.png',
       nome: 'Tether',
       sigla: 'USDT',
       preco: 30.00,
@@ -186,7 +186,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/Toncoin.png',
+      icone: 'https://i.imgur.com/GIRHKI4.png',
       nome: 'Toncoin',
       sigla: 'TON',
       preco: 30.00,
@@ -200,7 +200,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/UNUSSEDLEO.png',
+      icone: 'https://i.imgur.com/EgBiNHF.png',
       nome: 'UNUS SED LEO',
       sigla: 'LEO',
       preco: 30.00,
@@ -214,7 +214,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/USDS.jpeg',
+      icone: 'https://i.imgur.com/6v5Wlpd.jpg',
       nome: 'USDS',
       sigla: 'USDS',
       preco: 30.00,
@@ -228,7 +228,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/WETH.png',
+      icone: 'https://i.imgur.com/Wz5FLNC.png',
       nome: 'WETH',
       sigla: 'WETH',
       preco: 30.00,
@@ -242,7 +242,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/WrappedBitcoin.png',
+      icone: 'https://i.imgur.com/G0AzDls.png',
       nome: 'Wrapped Bitcoin',
       sigla: 'WBTC',
       preco: 30.00,
@@ -256,7 +256,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/WrappedTRON.png',
+      icone: 'https://i.imgur.com/rS1EFZU.png',
       nome: 'Wrapped TRON',
       sigla: 'WTRX',
       preco: 30.00,
@@ -270,7 +270,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'assets/images/XRP.png',
+      icone: 'https://i.imgur.com/ULtju8G.png',
       nome: 'XRP',
       sigla: 'XRP',
       preco: 30.00,
