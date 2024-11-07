@@ -4,7 +4,7 @@ import 'package:cripto/models/moedas.dart';
 class MoedaRepository {
   static List<Moeda> tabela = [
     Moeda(
-      icone: 'assets/images/Bitcoin.png',
+      icone: 'lib/assets/images/Bitcoin.png',
       nome: 'Bitcoin',
       sigla: 'BTC',
       preco: 1509.00,
