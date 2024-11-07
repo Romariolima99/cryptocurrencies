@@ -1,4 +1,4 @@
-# cripto
+# cryptocurrencies
 
 A new Flutter project.
 
@@ -16,7 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-#cryptocurrencies
+# cryptocurrencies
 
 - Aplicação desenvolvida em Flutter para gerenciamento de criptomoedas. Ela oferece funcionalidades como login e cadastro com Firebase, salvamento de moedas favoritas no Firestore, gráficos de variação de valores de criptomoedas, histórico de compras, envio de comprovantes da galeria, e captura de fotos de documentos. A aplicação foi desenvolvida para a web e utiliza boas práticas de desenvolvimento e gerenciamento de estado.
 
