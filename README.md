@@ -59,3 +59,10 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Mobile Conta
 <img src="https://i.imgur.com/uEp5TIk.png" alt="Mobile Screenshot" width="300"/> 
+
+## Clone
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/Romariolima99/cryptocurrencies.git
