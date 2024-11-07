@@ -43169,7 +43169,7 @@ case 5:return A.A(null,r)
 case 1:return A.z(p,r)}})
 return A.B($async$B6,r)},
 G(a){var s=null
-return A.qP(s,A.ih(B.bq,A.b([A.aGy(0,new A.mZ(A.aAR(s,s,new A.ym("assets/images/background.jpeg",s,s)),s,B.AL,s)),A.cA(s,s,B.p,A.S(B.c.ad(127.5),0,0,0),s,s,s,s,s,s,s,s,s,s),this.a3Q()],t.p),B.I,B.bl),s,s,s)}}
+return A.qP(s,A.ih(B.bq,A.b([A.aGy(0,new A.mZ(A.aAR(s,s,new A.ym("lib/assets/images/background.jpeg",s,s)),s,B.AL,s)),A.cA(s,s,B.p,A.S(B.c.ad(127.5),0,0,0),s,s,s,s,s,s,s,s,s,s),this.a3Q()],t.p),B.I,B.bl),s,s,s)}}
 A.as1.prototype={
 $1(a){if(a.length===0)return"Informe o email corretamente!"
 return null},
