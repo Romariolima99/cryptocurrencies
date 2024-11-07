@@ -102,7 +102,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'https://i.imgur.com/HbzqG0p.png',
+      icone: 'https://i.imgur.com/J9Yd5Sr.png',
       nome: 'Lido wstETH',
       sigla: 'WSTETH',
       preco: 1500.00,
