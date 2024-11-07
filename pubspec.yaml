@@ -52,7 +52,6 @@ dev_dependencies:
 # The following section is specific to Flutter packages.r
 flutter:
   assets:
-    - assets/images/
     - assets/images/background.jpeg
     - assets/images/Bitcoin.png
     - assets/images/Ethereum.png
