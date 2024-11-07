@@ -4,7 +4,7 @@ import 'package:cripto/models/moedas.dart';
 class MoedaRepository {
   static List<Moeda> tabela = [
     Moeda(
-      icone: 'images/Bitcoin.png',
+      icone: 'assets/images/Bitcoin.png',
       nome: 'Bitcoin',
       sigla: 'BTC',
       preco: 1509.00,
@@ -18,7 +18,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 150.0,
     ),
     Moeda(
-      icone: 'images/Ethereum.png',
+      icone: 'assets/images/Ethereum.png',
       nome: 'Ethereum',
       sigla: 'ETH',
       preco: 1200.00,
@@ -32,7 +32,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 120.0,
     ),
     Moeda(
-      icone: 'images/Avalanche.png',
+      icone: 'assets/images/Avalanche.png',
       nome: 'Avalanche',
       sigla: 'AVAX',
       preco: 0.99,
@@ -46,7 +46,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 85.0,
     ),
     Moeda(
-      icone: 'images/BNB.png',
+      icone: 'assets/images/BNB.png',
       nome: 'BNB',
       sigla: 'BNB',
       preco: 2.50,
@@ -60,7 +60,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 60.0,
     ),
     Moeda(
-      icone: 'images/Cardano.png',
+      icone: 'assets/images/Cardano.png',
       nome: 'Cardano',
       sigla: 'ADA',
       preco: 30.00,
@@ -74,7 +74,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Chainlink.png',
+      icone: 'assets/images/Chainlink.png',
       nome: 'Chainlink',
       sigla: 'LINK',
       preco: 30.00,
@@ -88,7 +88,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Dogecoin.png',
+      icone: 'assets/images/Dogecoin.png',
       nome: 'Dogecoin',
       sigla: 'DOGE',
       preco: 30.00,
@@ -102,7 +102,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/LidowstETH.png',
+      icone: 'assets/images/LidowstETH.png',
       nome: 'Lido wstETH',
       sigla: 'WSTETH',
       preco: 30.00,
@@ -116,7 +116,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Litecoin.png',
+      icone: 'assets/images/Litecoin.png',
       nome: 'Dogecoin',
       sigla: 'Litecoin',
       preco: 30.00,
@@ -130,7 +130,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/SHIBAINU.png',
+      icone: 'assets/images/SHIBAINU.png',
       nome: 'SHIBA INU',
       sigla: 'SHIB',
       preco: 30.00,
@@ -144,7 +144,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Solana.png',
+      icone: 'assets/images/Solana.png',
       nome: 'Solana',
       sigla: 'SOL',
       preco: 30.00,
@@ -158,7 +158,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/SUI.png',
+      icone: 'assets/images/SUI.png',
       nome: 'SUI',
       sigla: 'SUI',
       preco: 30.00,
@@ -172,7 +172,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Tether.png',
+      icone: 'assets/images/Tether.png',
       nome: 'Tether',
       sigla: 'USDT',
       preco: 30.00,
@@ -186,7 +186,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Toncoin.png',
+      icone: 'assets/images/Toncoin.png',
       nome: 'Toncoin',
       sigla: 'TON',
       preco: 30.00,
@@ -200,7 +200,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/UNUS SED LEO.png',
+      icone: 'assets/images/UNUSSEDLEO.png',
       nome: 'UNUS SED LEO',
       sigla: 'LEO',
       preco: 30.00,
@@ -214,7 +214,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/USDS.jpeg',
+      icone: 'assets/images/USDS.jpeg',
       nome: 'USDS',
       sigla: 'USDS',
       preco: 30.00,
@@ -228,7 +228,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/WETH.png',
+      icone: 'assets/images/WETH.png',
       nome: 'WETH',
       sigla: 'WETH',
       preco: 30.00,
@@ -242,7 +242,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/Wrapped Bitcoin.png',
+      icone: 'assets/images/WrappedBitcoin.png',
       nome: 'Wrapped Bitcoin',
       sigla: 'WBTC',
       preco: 30.00,
@@ -256,7 +256,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/WrappedTRON.png',
+      icone: 'assets/images/WrappedTRON.png',
       nome: 'Wrapped TRON',
       sigla: 'WTRX',
       preco: 30.00,
@@ -270,7 +270,7 @@ class MoedaRepository {
       mudancaPeriodoTotal: 90.0,
     ),
     Moeda(
-      icone: 'images/XRP.png',
+      icone: 'assets/images/XRP.png',
       nome: 'XRP',
       sigla: 'XRP',
       preco: 30.00,

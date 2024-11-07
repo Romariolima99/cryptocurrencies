@@ -52,23 +52,23 @@ dev_dependencies:
 # The following section is specific to Flutter packages.r
 flutter:
   assets:
-    - images/
-    - images/background.jpeg
-    - images/Bitcoin.png
-    - images/Ethereum.png
-    - images/Avalanche.png
-    - images/BNB.png
-    - images/Cardano.png
-    - images/Chainlink.png
-    - images/Dogecoin.png
-    - images/LidowstETH.png
-    - images/Litecoin.png
-    - images/SHIBAINU.png
-    - images/SUI.png
-    - images/Tether.png
-    - images/UNUSSEDLEO.png
-    - images/USDS.jpeg
-    - images/XRP.png
+    - assets/images/
+    - assets/images/background.jpeg
+    - assets/images/Bitcoin.png
+    - assets/images/Ethereum.png
+    - assets/images/Avalanche.png
+    - assets/images/BNB.png
+    - assets/images/Cardano.png
+    - assets/images/Chainlink.png
+    - assets/images/Dogecoin.png
+    - assets/images/LidowstETH.png
+    - assets/images/Litecoin.png
+    - assets/images/SHIBAINU.png
+    - assets/images/SUI.png
+    - assets/images/Tether.png
+    - assets/images/UNUSSEDLEO.png
+    - assets/images/USDS.jpeg
+    - assets/images/XRP.png
     
 
   # The following line ensures that the Material Icons font is
