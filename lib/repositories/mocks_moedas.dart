@@ -133,7 +133,7 @@ class MoedaRepository {
       icone: 'https://i.imgur.com/CumXwMQ.png',
       nome: 'SHIBA INU',
       sigla: 'SHIB',
-      preco: 0.00004,
+      preco: 0.04,
       baseId: 'SHIB',
       timestamp: DateTime.now(),
       mudancaHora: 0.2,
