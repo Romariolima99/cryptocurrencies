@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
       if (isLogin) {
         titulo = 'Crypto Currencies';
         actionButton = 'Login';
-        toggleButton = 'Ainda não tem conta? Cadastra-se agora!';
+        toggleButton = 'Ainda não tem conta? Cadastre-se agora!';
       } else {
         titulo = 'Crie sua conta';
         actionButton = 'Cadastrar';
