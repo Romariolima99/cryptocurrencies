@@ -42,3 +42,20 @@ samples, guidance on mobile development, and a full API reference.
 # Demonstração
 
 - [Veja o Projeto](https://cryptocurrencies-taupe.vercel.app/)
+
+### Mobile Login
+<img src="https://i.imgur.com/30bwwiE.png" alt="Mobile Screenshot" width="300"/> 
+
+
+### Mobile Criptomoedas
+<img src="https://i.imgur.com/UhpKNhT.png" alt="Mobile Screenshot" width="300"/> 
+
+
+### Mobile Favoritas
+<img src="https://i.imgur.com/WW1WEZA.png" alt="Mobile Screenshot" width="300"/> 
+
+### Mobile Carteira
+<img src="https://i.imgur.com/YjivjQq.png" alt="Mobile Screenshot" width="300"/> 
+
+### Mobile Conta
+<img src="https://i.imgur.com/uEp5TIk.png" alt="Mobile Screenshot" width="300"/> 
